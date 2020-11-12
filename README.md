@@ -15,9 +15,11 @@ Documentation Du Logiciel :
 - 📚 PhpMyAdmin - Un serveur de Base de données MySql comme PhpMyAdmin
 - 🌀 Maven - Outil de gestion et d'automatisation de production des projets logiciels en Java  
 
+## Installation sous Linux 📁
+
 ## Etape 1 - Installation de PhpMyAdmin sous Linux 📁
 
-voici un tutoriel pour les utilisateurs de Linux:
+Tutoriel pour les utilisateurs de Linux:
 - http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin.
 
 ## Etape 2 - Cloner le projet sur la machine virtuel sous linux 📁
