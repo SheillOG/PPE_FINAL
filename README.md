@@ -6,7 +6,7 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 Documentation Du Logiciel :
 
-- https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0
+- https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing
 
 ## Requis 🖱️
 
