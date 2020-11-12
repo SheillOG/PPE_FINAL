@@ -1,21 +1,19 @@
 # Perpi & Co - Projet PPE3 - BTS SIO
 
-Perpi & Co est un logiciel développé en Java 8, il permet de gérer lesystème de vente d'une entreprise de  ainsi que d'effectuer des ventes au près des clients.
+Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il permet de gérer lesystème de vente d'une entreprise de  ainsi que d'effectuer des ventes au près des clients.
 
 ## Documentation 📕
 
 ## Pré-requis 🖱️
 
-Les pré-requis sont les suivants:
-
-- 🖊️ IDE - Environnement de développement integré pour visualiser, éditer et compiler
+- 🖊️ IDE - Environnement de développement integré pour visualiser, éditer et compiler (Intelij Community, NetBeans 12.0)
 - ♨️ Développent Kit - Kit de développement de Java en version 1.8  (https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
-- 🌀 Maven - Outil de gestion et d'automatisation de production des projets logiciels en Java  
+- 📚 PhpMyAdmin - Un serveur de Base de données MySql comme PhpMyAdmin
 - 📊 Swing - Bibliothèque graphique de Java
-- 📚 SQL - Un serveur de Base de données comme PhpMyAdmin (Conseillé)
+- 🌀 Maven - Outil de gestion et d'automatisation de production des projets logiciels en Java  
 
 
-## Installation sur Machine Virtuel 📁
+## Installation sur une Machine Virtuel 📁
 
 voici un tutoriel pour les utilisateurs de Linux:
 http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin.
@@ -31,8 +29,7 @@ Pour installer le JAR, il suffit de cloner le repository:
 
 Pour commencer l'installation il faut installer MySQL et PhpMyAdmin, il est possible de les installer grâce à WAMP (Windows).
 
-- Ensuite Connectez vous sur PHPMyAdmin, une fois dans la page rendez vous dans Importer
-- Cliquez sur choisir un fichier 
-- Rendez-vous dans le dossier PPE3 que nous avons fait auparavant
-- Séléctionnez le fichier PPE3.sql
-- Cliquez sur le boutton "Go"
+- Connectez vous sur PHPMyAdmin
+- Rendez vous dans Importer
+- Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier PPE.SQL
+- Executer le fichier
