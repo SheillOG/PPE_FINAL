@@ -32,5 +32,5 @@ Pour commencer l'installation il faut installer MySQL et PhpMyAdmin, il est poss
 
 - Connectez vous sur PHPMyAdmin
 - Rendez vous dans Importer
-- Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier PPE.SQL
+- Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier ProjetSF4.sql
 - Executer le fichier
