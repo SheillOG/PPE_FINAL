@@ -40,3 +40,5 @@ Voici un lien pour le télécharger: https://www.wampserver.com/en/download-wamp
 - Rendez vous dans Importer
 - Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier ProjetSF4.sql
 - Executer le fichier
+
+- Ensuite utiliser la documentation afin d'avoir des informations sur le logiciel ansi qu'une notice d'utilisation
