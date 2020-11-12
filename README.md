@@ -1,6 +1,6 @@
 # Perpi & Co - Projet PPE3 - BTS SIO
 
-Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il permet de gérer les système de vente d'une entreprise ainsi que d'effectuer des ventes au près des clients. (Quelques soucis peuvent être rencontré, car le projet à était commencer sur NetBeans et VmWare, puis recommencer pour cause de problème sur Intelijj et Wamp)
+Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il permet de gérer les système de vente d'une entreprise ainsi que d'effectuer des ventes au près des clients. (Quelques soucis peuvent être rencontré, car le projet à était commencer sur NetBeans et VmWare, puis recommencer pour cause de non compabilité sur Intelijj et Wamp)
 
 ## Documentation 📕
 
@@ -29,7 +29,6 @@ Pour installer le JAR, il suffit de cloner le repository depuis votre machine li
   - mkdir ProjetSF4
   - cd ProjetSF4
   - git clone https://github.com/SheillOG/PPE_FINAL.git
-
 
 ## Installation sous Windows (Recommendé pour le .jar) 📁
 
