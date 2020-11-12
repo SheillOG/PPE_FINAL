@@ -35,7 +35,10 @@ Pour installer le JAR, il suffit de cloner le repository depuis votre machine li
 Pour commencer l'installation il faut installer MySQL et PhpMyAdmin, il est possible de les installer grâce à WAMP (Windows).
 Voici un lien pour le télécharger: https://www.wampserver.com/en/download-wampserver-64bits/
 
-- Connectez vous sur PHPMyAdmin
+- Telecharger le ProjetSF4.sql présent sur github
+- Lancer WampServer
+- Connectez vous sur PHPMyAdmin (http://127.0.0.1/phpmyadmin/)
+- Login: root MotDePasse: laisser vide
 - Rendez vous dans Importer
 - Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier ProjetSF4.sql
 - Executer le fichier
