@@ -4,7 +4,7 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 ## Documentation 📕
 
-- 📚 Doc - https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing
+- 📚 [Doc](https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing)
 
 ## Requis 🖱️
 
@@ -17,8 +17,7 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 ## Etape 1 - Installation de PhpMyAdmin sous Linux 📁
 
-Tutoriel pour les utilisateurs de Linux:
-- http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin.
+[Tutoriel pour les utilisateurs de Linux:] (http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin).
 
 ## Etape 2 - Cloner le projet sur la machine virtuel sous linux 📁
 
