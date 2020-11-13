@@ -30,7 +30,7 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 # Installation sous Windows (Recommendé pour le .jar) 📁
 
 Pour commencer l'installation il faut installer MySQL et PhpMyAdmin, il est possible de les installer grâce à WAMP (Windows).
-Voici un lien pour le télécharger: https://www.wampserver.com/en/download-wampserver-64bits/
+Voici un lien pour le télécharger: [WampServer](https://www.wampserver.com/en/download-wampserver-64bits/)
 
 - Telecharger le ProjetSF4.sql présent sur github
 - Lancer WampServer
