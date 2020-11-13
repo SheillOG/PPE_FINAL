@@ -4,12 +4,12 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 ## Documentation 📕
 
-- 📚 [Doc](https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing)
+- 📚 [Voir la documentation](https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing)
 
 ## Requis 🖱️
 
 - 🖊️ IDE - Environnement de développement (Intelij Community, NetBeans 12.0 recommendé pour avoir accès à Swing)
-- ♨️ Développent Kit - Kit de développement (https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
+- ♨️ Développent Kit - Kit de développement [Telecharger un kit de développement](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
 - 📚 PhpMyAdmin - Un serveur de Base de données MySql comme PhpMyAdmin
 - 🌀 Maven - Outil de gestion et d'automatisation de production des projets logiciels en Java  
 
@@ -23,9 +23,9 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 ♨️ Pour installer le JAR, il suffit de cloner le repository depuis votre machine linux:
 
-  - mkdir ProjetSF4
-  - cd ProjetSF4
-  - git clone https://github.com/SheillOG/PPE_FINAL.git
+  - >mkdir ProjetSF4
+  - >cd ProjetSF4
+  - >git clone https://github.com/SheillOG/PPE_FINAL.git
 
 ## Installation sous Windows (Recommendé pour le .jar) 📁
 
@@ -34,7 +34,7 @@ Voici un lien pour le télécharger: https://www.wampserver.com/en/download-wamp
 
 - Telecharger le ProjetSF4.sql présent sur github
 - Lancer WampServer
-- Connectez vous sur PHPMyAdmin (http://127.0.0.1/phpmyadmin/)
+- Connectez vous sur PHPMyAdmin [Cliquer ici pour vous rendre sur la page PhpMyAdmin](http://127.0.0.1/phpmyadmin/)
 - Login: root MotDePasse: laisser vide
 - Rendez vous dans Importer
 - Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier ProjetSF4.sql
