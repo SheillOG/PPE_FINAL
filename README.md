@@ -13,7 +13,7 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 - 📚 PhpMyAdmin - Un serveur de Base de données MySql comme PhpMyAdmin
 - 🌀 Maven - Outil de gestion et d'automatisation de production des projets logiciels en Java  
 
-## Installation sous Linux 📁
+# Installation sous Linux 📁
 
 ## Etape 1 - Installation de PhpMyAdmin sous Linux 📁
 
@@ -23,11 +23,11 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 ♨️ Pour installer le JAR, il suffit de cloner le repository depuis votre machine linux:
 
-  - >mkdir ProjetSF4
-  - >cd ProjetSF4
-  - >git clone https://github.com/SheillOG/PPE_FINAL.git
+  - mkdir ProjetSF4
+  - cd ProjetSF4
+  - git clone https://github.com/SheillOG/PPE_FINAL.git
 
-## Installation sous Windows (Recommendé pour le .jar) 📁
+# Installation sous Windows (Recommendé pour le .jar) 📁
 
 Pour commencer l'installation il faut installer MySQL et PhpMyAdmin, il est possible de les installer grâce à WAMP (Windows).
 Voici un lien pour le télécharger: https://www.wampserver.com/en/download-wampserver-64bits/
