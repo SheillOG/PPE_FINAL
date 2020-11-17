@@ -21,17 +21,16 @@ import javax.swing.JOptionPane;
  */
 public final class Main extends javax.swing.JFrame {
 
-    
     /**
-     * La variable connecter permet d'attribuer 1 ou 0 selon l'état de connection (1 = connecter et 2 = deconnecter)
-     * La variable admin permet d'attribuer l'admin ou non à un utilisateur
+     * La variable connecter permet d'attribuer 1 ou 0 selon l'état de
+     * connection (1 = connecter et 2 = deconnecter) La variable admin permet
+     * d'attribuer l'admin ou non à un utilisateur
      */
-    
     public static int connecter;
     public static boolean admin;
-    
+
     /**
-     * Creates new form test
+     * Initialise les components ainsi que les Checker
      */
     public Main() {
         initComponents();
@@ -39,10 +38,8 @@ public final class Main extends javax.swing.JFrame {
         venteCheckIdClient();
         venteCheckIdAgent();
         venteCheckProduit();
-        
-    }
 
-    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1224,6 +1221,10 @@ public final class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Methode du boutton Categorie disponible au menu principal
+     */
+
     private void OuvrirCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OuvrirCategorieActionPerformed
         Categorie.setVisible(true);
         Main.setVisible(false);
@@ -1233,8 +1234,10 @@ public final class Main extends javax.swing.JFrame {
         System.out.println(connecter);
     }//GEN-LAST:event_OuvrirCategorieActionPerformed
 
-    
-    
+    /**
+     * Methode du boutton se connecrer disponible dans le Login
+     */
+
     private void SeConnecterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeConnecterActionPerformed
         try {
 
@@ -1277,25 +1280,28 @@ public final class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SeConnecterActionPerformed
 
+    /**
+     * Methode pour afficher les produits correspondants à une catégorie
+     */
+
     private void buttonAfficherProduitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfficherProduitActionPerformed
         DefaultListModel produit = (DefaultListModel) jListCategorie.getModel();
-        
-        if(connecter == 1){
+
+        if (connecter == 1) {
             ModifierCategorie.setVisible(false);
             try {
-            ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from produit");
-            if (jListCategorie.getSelectedValue() == null) {
-                JOptionPane.showMessageDialog(null, "Veuillez selectionner une categorie");
-                return;
-            } 
-            while (lesDonnees.next() ) {
-                
-                    String libelle = "Type de cape: " + lesDonnees.getString("libellle");
-                    String categorie = "Categorie: " + lesDonnees.getString ("categorie");
-                    String prix = "Prix: " + lesDonnees.getString("prix") + " € unit";
-                    String quantite = "Quantité: " + lesDonnees.getString("quantite") + " en stock";       
-                    String evaluation = "Evaluation: " + lesDonnees.getString("evaluation") + " ★";                      
+                ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from produit");
+                if (jListCategorie.getSelectedValue() == null) {
+                    JOptionPane.showMessageDialog(null, "Veuillez selectionner une categorie");
+                    return;
+                }
+                while (lesDonnees.next()) {
 
+                    String libelle = "Type de cape: " + lesDonnees.getString("libellle");
+                    String categorie = "Categorie: " + lesDonnees.getString("categorie");
+                    String prix = "Prix: " + lesDonnees.getString("prix") + " € unit";
+                    String quantite = "Quantité: " + lesDonnees.getString("quantite") + " en stock";
+                    String evaluation = "Evaluation: " + lesDonnees.getString("evaluation") + " ★";
 
                     produit.removeAllElements();
                     produit.addElement(libelle);
@@ -1303,28 +1309,34 @@ public final class Main extends javax.swing.JFrame {
                     produit.addElement(prix);
                     produit.addElement(quantite);
                     produit.addElement(evaluation);
-                
-                
-                
-            } 
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Veuillez vous identifier");
-        }            
+        }
     }//GEN-LAST:event_buttonAfficherProduitActionPerformed
+
+    /**
+     * Appel de la fonction retourMenu permettant de retourner au menu principal
+     */
 
     private void RetourMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourMenuActionPerformed
         retourMenu();
 
     }//GEN-LAST:event_RetourMenuActionPerformed
 
+    /**
+     * Methode permettant d'afficher la liste des catégories disponible
+     */
+
     private void buttonAfficherCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfficherCategorieActionPerformed
 
         DefaultListModel produit = (DefaultListModel) jListCategorie.getModel();
 
-        if(connecter == 1){
+        if (connecter == 1) {
             ModifierCategorie.setVisible(true);
             try {
                 ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from categorie");
@@ -1343,6 +1355,10 @@ public final class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Veuillez vous identifier");
         }
     }//GEN-LAST:event_buttonAfficherCategorieActionPerformed
+
+    /**
+     * Methode affichant les clients enregistrer dans la Base De Données
+     */
 
     private void buttonAfficherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfficherActionPerformed
 
@@ -1367,6 +1383,10 @@ public final class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Veuillez vous identifier");
         }
     }//GEN-LAST:event_buttonAfficherActionPerformed
+
+    /**
+     * Methode pour modifier les clients enregistrer dans la Base De Données
+     */
 
     private void buttonModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModifierActionPerformed
 
@@ -1407,6 +1427,10 @@ public final class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_buttonModifierActionPerformed
 
+    /**
+     * Methode pour enregistrer un client
+     */
+
     private void buttonCreerClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreerClientActionPerformed
         ClientCreer.setVisible(true);
         ClientCreer.setSize(400, 400);
@@ -1420,6 +1444,10 @@ public final class Main extends javax.swing.JFrame {
     private void saisieModificiationNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saisieModificiationNomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saisieModificiationNomActionPerformed
+
+    /**
+     * Methode pour modifier les informations d'un client
+     */
 
     private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
 
@@ -1440,6 +1468,10 @@ public final class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_saisieCreationNomActionPerformed
 
+    /**
+     * Methode pour créer un clients
+     */
+
     private void buttonCreeClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreeClientActionPerformed
 
         DefaultListModel produit = (DefaultListModel) jList2.getModel();
@@ -1455,20 +1487,28 @@ public final class Main extends javax.swing.JFrame {
         produit.addElement(nom);
     }//GEN-LAST:event_buttonCreeClientActionPerformed
 
+    /**
+     * Methode affichant la fenetre appeler client depuis le menu principal
+     */
+
     private void OuvrirClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OuvrirClientActionPerformed
         Client.setVisible(true);
         Client.setSize(400, 400);
         Client.setResizable(false);
         Client.setLocationRelativeTo(null);
-        
+
     }//GEN-LAST:event_OuvrirClientActionPerformed
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         retourMenu();
     }//GEN-LAST:event_RetourActionPerformed
 
-    
-    
+    /**
+     * Fonction pour récupérer depuis la table profil l'id et le libelle (admin
+     * / agent)
+     *
+     * et ajouter à la combobox du pannel admin les libelle Admin & Agent
+     */
     public void profilCheck() {
         DefaultComboBoxModel combobox = (DefaultComboBoxModel) jComboBox.getModel();
         try {
@@ -1481,8 +1521,7 @@ public final class Main extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+
     public void venteCheckIdClient() {
         DefaultComboBoxModel combobox = (DefaultComboBoxModel) jComboBoxIdClient.getModel();
         try {
@@ -1496,8 +1535,7 @@ public final class Main extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
- 
-    
+
     public void venteCheckIdAgent() {
         DefaultComboBoxModel combobox = (DefaultComboBoxModel) jComboBoxIdAgent.getModel();
         try {
@@ -1511,7 +1549,7 @@ public final class Main extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void venteCheckProduit() {
         DefaultComboBoxModel combobox = (DefaultComboBoxModel) jComboBoxProduit.getModel();
         try {
@@ -1523,17 +1561,19 @@ public final class Main extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
-    
-    
-    
+    }
+
+    /**
+     * Methode affichant les agents enregistrer dans la Base De Données
+     */
+
     private void afficherAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherAgentActionPerformed
         affichageProfil.setModel(new DefaultListModel());
         DefaultListModel produit = (DefaultListModel) affichageProfil.getModel();
 
         if (connecter == 1) {
             try {
-                
+
                 ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteAgents where id_profil = 2");
 
                 produit.removeAllElements();
@@ -1554,13 +1594,17 @@ public final class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_afficherAgentActionPerformed
 
+    /**
+     * Methode affichant les admin enregistrer dans la Base De Données
+     */
+
     private void afficherAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherAdminActionPerformed
         affichageProfil.setModel(new DefaultListModel());
         DefaultListModel produit = (DefaultListModel) affichageProfil.getModel();
 
         if (connecter == 1) {
             try {
-                
+
                 ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteAgents where id_profil = 1");
 
                 produit.removeAllElements();
@@ -1581,6 +1625,10 @@ public final class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_afficherAdminActionPerformed
 
+    /**
+     * Methode pour créer un agent
+     */
+
     private void jButtonCreerAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreerAgentActionPerformed
         ProfilCreerAgent.setVisible(true);
         ProfilCreerAgent.setSize(400, 400);
@@ -1597,6 +1645,11 @@ public final class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxActionPerformed
 
+    /**
+     * Methode pour envoyer les champs saisie afin de créer l'agent ou l'admin
+     * dans la Base De Données
+     */
+
     private void jButtonCreerProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreerProfilActionPerformed
         String nom = saisieNom.getText();
         String email = saisieEmail.getText();
@@ -1612,6 +1665,10 @@ public final class Main extends javax.swing.JFrame {
         Profil.setVisible(true);
     }//GEN-LAST:event_jButtonCreerProfilActionPerformed
 
+    /**
+     * Fonction permettant d'ouvrir le profil
+     */
+
     private void OuvrirProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OuvrirProfilActionPerformed
         Profil.setVisible(true);
         Profil.setSize(450, 400);
@@ -1622,6 +1679,10 @@ public final class Main extends javax.swing.JFrame {
     private void RetourMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourMenu2ActionPerformed
         retourMenu();
     }//GEN-LAST:event_RetourMenu2ActionPerformed
+
+    /**
+     * Methode affichant les ventes enregistrer dans la Base De Données
+     */
 
     private void buttonAfficher1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfficher1ActionPerformed
         listProduit.setModel(new DefaultListModel());
@@ -1648,16 +1709,24 @@ public final class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_buttonAfficher1ActionPerformed
 
+    /**
+     * Methode pour créer une vente
+     */
+
     private void buttonCreerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreerActionPerformed
         VenteCreer.setVisible(true);
         VenteCreer.setSize(400, 400);
         VenteCreer.setResizable(false);
         VenteCreer.setLocationRelativeTo(null);
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date(System.currentTimeMillis());
         saisieDateVente.setText(formatter.format(date));
-        
+
     }//GEN-LAST:event_buttonCreerActionPerformed
+
+    /**
+     * Methode pour modifier les ventes
+     */
 
     private void buttonModifier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModifier1ActionPerformed
         if (listProduit.getSelectedValue() == null) {
@@ -1675,13 +1744,8 @@ public final class Main extends javax.swing.JFrame {
             ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from vente");
 
             while (lesDonnees.next()) {
-                int idvente = lesDonnees.getInt("Id_vente");
-                String produit = lesDonnees.getString("nomProduit");
                 int quant = lesDonnees.getInt("Quantite");
-                if (idvente == Integer.parseInt(jListCategorie.getSelectedValue().split(": ")[1])) {
-                    saisieModificiationQuantite.setText("" + quant);
-
-                }
+                saisieModificiationQuantite.setText("" + quant);
 
             }
         } catch (SQLException ex) {
@@ -1689,19 +1753,22 @@ public final class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonModifier1ActionPerformed
 
+    /**
+     * Methode pour générer une facture
+     */
+
     private void buttonFactureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFactureActionPerformed
         String idcheck = listProduit.getSelectedValue().split(": ")[1];
-        
+
         if (admin) {
             VenteFacture.setVisible(true);
             VenteFacture.setSize(400, 400);
             VenteFacture.setResizable(false);
             VenteFacture.setLocationRelativeTo(null);
-            if (listProduit.getSelectedValue() == null) {
+            if (listProduit.getSelectedValue().equals(null)) {
                 JOptionPane.showMessageDialog(null, "Veuillez selectionner une vente");
             } else {
                 try {
-
 
                     ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from vente, produit , client where Id_vente ='" + idcheck + "'");
 
@@ -1721,22 +1788,20 @@ public final class Main extends javax.swing.JFrame {
                         jLabelAfficherQuantite.setText("" + quant);
                         jLabelAfficherPrix.setText("" + prixtotal);
 
-
-
-
-
                     }
                 } catch (SQLException ex) {
                     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            
-
-        } 
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Tu n'as pas la permission");
         }
-        
+
     }//GEN-LAST:event_buttonFactureActionPerformed
+
+    /**
+     * Methode pour afficher les statistiques
+     */
 
     private void jButtonStatistiquesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStatistiquesActionPerformed
         Stat.setVisible(true);
@@ -1747,7 +1812,7 @@ public final class Main extends javax.swing.JFrame {
         StatList.setModel(new DefaultListModel());
         DefaultListModel produit = (DefaultListModel) StatList.getModel();
 
-        if(connecter == 1){
+        if (connecter == 1) {
             try {
                 ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from vente, produit");
                 produit.removeAllElements();
@@ -1767,15 +1832,37 @@ public final class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonStatistiquesActionPerformed
 
+    /**
+     * Methode pour gérer les stocks
+     */
+    
     private void jButtonStocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStocksActionPerformed
-        JOptionPane.showMessageDialog(null, "Aucun produit en rupture");
 
+        try {
+            ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from produit where quantite = 1");
+            lesDonnees.first();
+            while (lesDonnees.next()) {
+                if (lesDonnees == null) {
+                    JOptionPane.showMessageDialog(null, "Aucune rupture en cour");
+                } else {
+                    String produitrup = lesDonnees.getString("libellle");
+                    System.out.println(produitrup);
+                    JOptionPane.showMessageDialog(null, produitrup);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonStocksActionPerformed
 
     private void saisieModificiationQuantiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saisieModificiationQuantiteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_saisieModificiationQuantiteActionPerformed
 
+    /**
+     * Methode pour sauvegarder une modification sur une vente
+     */
+    
     private void buttonSave1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSave1ActionPerformed
 
         DefaultListModel produit = (DefaultListModel) jListCategorie.getModel();
@@ -1791,6 +1878,10 @@ public final class Main extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Bientot disponible");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * Methode pour ouvrir la fenetre des ventes
+     */    
+    
     private void OuvrirVenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OuvrirVenteActionPerformed
         Vente.setVisible(true);
         Main.setVisible(false);
@@ -1799,6 +1890,10 @@ public final class Main extends javax.swing.JFrame {
         Vente.setLocationRelativeTo(null);
     }//GEN-LAST:event_OuvrirVenteActionPerformed
 
+    /**
+     * Boutton pour sauvegarder une categorie
+     */
+    
     private void ButtonSauvegarderCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSauvegarderCategorieActionPerformed
         DefaultListModel produit = (DefaultListModel) jListCategorie.getModel();
 
@@ -1809,12 +1904,16 @@ public final class Main extends javax.swing.JFrame {
         CategorieModifier.setVisible(false);
         produit.setElementAt(nomCategorie, jListCategorie.getSelectedIndex());
 
-        
-    }//GEN-LAST:event_ButtonSauvegarderCategorieActionPerformed
 
+    }//GEN-LAST:event_ButtonSauvegarderCategorieActionPerformed
+ 
+    /**
+     * Methode pour afficher la fenetre de modification de catégorie
+     */
+    
     private void ModifierCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifierCategorieActionPerformed
-        
-        if(connecter == 1){
+
+        if (connecter == 1) {
 
             if (jListCategorie.getSelectedValue() == null) {
                 JOptionPane.showMessageDialog(null, "Veuillez selectionner une categorie");
@@ -1824,8 +1923,8 @@ public final class Main extends javax.swing.JFrame {
                 CategorieModifier.setResizable(false);
                 CategorieModifier.setLocationRelativeTo(null);
                 saisieNomCategorie.setText(jListCategorie.getSelectedValue());
-            } 
-        
+            }
+
         }
     }//GEN-LAST:event_ModifierCategorieActionPerformed
 
@@ -1833,6 +1932,10 @@ public final class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_saisieDateVenteActionPerformed
 
+    /**
+     * Methode pour sauvegarder la creation d'une vente dans la Base de données
+     */
+    
     private void SauvegarderCreerVenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SauvegarderCreerVenteActionPerformed
 
         String date = saisieDateVente.getText();
@@ -1840,7 +1943,7 @@ public final class Main extends javax.swing.JFrame {
         ProfilCombo idclient = (ProfilCombo) jComboBoxIdClient.getSelectedItem();
         ProfilCombo produit = (ProfilCombo) jComboBoxProduit.getSelectedItem();
         ProfilCombo idagent = (ProfilCombo) jComboBoxIdAgent.getSelectedItem();
-       
+
         SqlManager.getInstance().requeteAction("insert into `vente` (`Id_vente`, `nomProduit`, `Id_client`, `id_agent`, `la_date`, `Quantite`) values (NULL ,'" + produit.getValue() + "','" + idclient.getId() + "','" + idagent.getId() + "', NULL ,'" + quantite + "')");
         JOptionPane.showMessageDialog(null, "Produit vendu: " + produit + " x " + quantite + " Par l'agent: " + idagent.getValue());
         VenteCreer.setVisible(false);
@@ -1853,7 +1956,7 @@ public final class Main extends javax.swing.JFrame {
 
     private void GenerationJeuDessaieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerationJeuDessaieActionPerformed
         SqlManager.getInstance().requeteAction("insert into `client` (`Id_client`, `nomClient`, `emailClient`, `telephoneClient`, `adresse`) values (NULL ,'thomas', 'romarin@gmail.com', '0678451122', '10 rue des cerises')");
-        SqlManager.getInstance().requeteAction("insert into `client` (`Id_client`, `nomClient`, `emailClient`, `telephoneClient`, `adresse`) values (NULL ,'romain', 'romai@gmail.com', '0741895620', '75 cedex des ramaux')");        
+        SqlManager.getInstance().requeteAction("insert into `client` (`Id_client`, `nomClient`, `emailClient`, `telephoneClient`, `adresse`) values (NULL ,'romain', 'romai@gmail.com', '0741895620', '75 cedex des ramaux')");
         Main.setVisible(true);
         JeuEssaie.setVisible(false);
         JOptionPane.showMessageDialog(null, "Injection reussite");
@@ -1871,6 +1974,10 @@ public final class Main extends javax.swing.JFrame {
         retourMenu();
     }//GEN-LAST:event_RetourStatActionPerformed
 
+     /**
+     * Methode pour gérer les ventes
+     */
+    
     private void buttonGererVenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGererVenteActionPerformed
         GererVente.setVisible(true);
         GererVente.setSize(400, 400);
@@ -1878,32 +1985,29 @@ public final class Main extends javax.swing.JFrame {
         GererVente.setLocationRelativeTo(null);
         jListGererVente.setModel(new DefaultListModel());
         DefaultListModel vente = (DefaultListModel) jListGererVente.getModel();
-        
-        
-        if(connecter == 1){
+
+        if (connecter == 1) {
             try {
-            ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from vente");
-            
-            while (lesDonnees.next() ) {
-                
+                ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from vente");
+
+                while (lesDonnees.next()) {
+
                     int idVente = lesDonnees.getInt("Id_vente");
                     int idAgent = lesDonnees.getInt("Id_agent");
                     int idClient = lesDonnees.getInt("Id_client");
                     String nProduit = lesDonnees.getString("nomProduit");
                     int quant = lesDonnees.getInt("Quantite");
-                    
-                    vente.addElement("[" + quant + "] " +  nProduit + " Vendu " + " Numero de vente: " + idVente + " effectué par l'agent ID: " + idAgent + " pour le client d'ID: " + idClient + "");                      
-                
-                
-                
-            } 
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+                    vente.addElement("[" + quant + "] " + nProduit + " Vendu " + " Numero de vente: " + idVente + " effectué par l'agent ID: " + idAgent + " pour le client d'ID: " + idClient + "");
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Veuillez vous identifier");
-        }            
-        
+        }
+
     }//GEN-LAST:event_buttonGererVenteActionPerformed
 
     /**
@@ -1942,21 +2046,17 @@ public final class Main extends javax.swing.JFrame {
                 Login.setSize(350, 225);
                 Login.setResizable(false);
                 Login.setLocationRelativeTo(null);
-                
-                
-                
+
             }
         });
     }
-    
-    
+
     /**
-     * Méthode pour le boutton retour qui permet de retourner au
-     * menu principal
+     * Méthode pour le boutton retour qui permet de retourner au menu principal
      *
      */
     
-    public void retourMenu(){
+    public void retourMenu() {
         Main.setVisible(true);
         Categorie.setVisible(false);
         Login.setVisible(false);
@@ -1968,12 +2068,11 @@ public final class Main extends javax.swing.JFrame {
         ProfilCreerAgent.setVisible(false);
         Stat.setVisible(false);
     }
-    
+
     /**
      * Méthode pour cacher le menu login
      */
-    
-    public void cacherLogin(){
+    public void cacherLogin() {
         Login.setVisible(false);
     }
 
