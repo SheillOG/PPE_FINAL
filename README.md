@@ -35,7 +35,7 @@ Voici un lien pour le télécharger: [WampServer](https://www.wampserver.com/en/
 - Telecharger le ProjetSF4.sql présent sur github
 - Lancer WampServer
 - Connectez vous sur PHPMyAdmin [Cliquer ici pour vous rendre sur la page PhpMyAdmin](http://127.0.0.1/phpmyadmin/)
-- Login: root MotDePasse: laisser vide
+- Login: root MotDePasse: root
 - Rendez vous dans Importer
 - Choisir un fichier (Dans notre cas le dossier ProjetSF4) et selectionner le fichier ProjetSF4.sql
 - Executer le fichier
