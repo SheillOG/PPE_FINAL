@@ -41,4 +41,4 @@ Voici un lien pour le télécharger: [WampServer](https://www.wampserver.com/en/
 - Executer le fichier
 
 - Ensuite utiliser la documentation afin d'avoir des informations sur le logiciel ansi qu'une notice d'utilisation
-- https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing
+- [Cliquer ici pour avoir accès a la documentation](https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing)
