@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `test`
+-- Base de données : `real`
 --
 
 -- --------------------------------------------------------
@@ -222,8 +222,7 @@ ALTER TABLE `produit`
 --
 ALTER TABLE `vente`
   ADD CONSTRAINT `vente_ibfk_1` FOREIGN KEY (`Id_client`) REFERENCES `client` (`Id_client`),
-  ADD CONSTRAINT `vente_ibfk_2` FOREIGN KEY (`id_agent`) REFERENCES `compteagents` (`id_agent`),
-  ADD CONSTRAINT `vente_ibfk_3` FOREIGN KEY (`la_date`) REFERENCES `e_date` (`la_date`);
+  ADD CONSTRAINT `vente_ibfk_2` FOREIGN KEY (`id_agent`) REFERENCES `compteagents` (`id_agent`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
