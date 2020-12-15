@@ -42,3 +42,8 @@ Voici un lien pour le télécharger: [WampServer](https://www.wampserver.com/en/
 
 - Ensuite utiliser la documentation afin d'avoir des informations sur le logiciel ansi qu'une notice d'utilisation
 - [Cliquer ici pour avoir accès a la documentation](https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing)
+
+# Si vous rencontrez un problème de lancement des classes 📁
+ - Recreer un projet Java JDK 8 
+ - Prenez la src + lib sur github et les placer dans IdeaProject (Pour Intelijj)
+ - N'oubliez pas d'importer les librairies 
