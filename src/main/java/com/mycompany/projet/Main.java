@@ -1241,7 +1241,7 @@ public final class Main extends javax.swing.JFrame {
     private void SeConnecterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeConnecterActionPerformed
         try {
 
-            ResultSet sql = SqlManager.getInstance().requeteSelection("select * from compteAgents where nomAgent = '" + saisieLogin.getText() + "' and motdepasseAgent = '" + saisieMotDePasse.getText() + "'");
+            ResultSet sql = SqlManager.getInstance().requeteSelection("select * from compteagents where nomAgent = '" + saisieLogin.getText() + "' and motdepasseAgent = '" + saisieMotDePasse.getText() + "'");
 
             if (sql.next()) {
 
@@ -1540,7 +1540,7 @@ public final class Main extends javax.swing.JFrame {
         DefaultComboBoxModel combobox = (DefaultComboBoxModel) jComboBoxIdAgent.getModel();
         try {
 
-            ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteAgents");
+            ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteagents");
             while (lesDonnees.next()) {
                 ProfilCombo profil = new ProfilCombo(lesDonnees.getString("id_agent"), lesDonnees.getString("nomAgent"));
                 combobox.addElement(profil);
@@ -1574,7 +1574,7 @@ public final class Main extends javax.swing.JFrame {
         if (connecter == 1) {
             try {
 
-                ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteAgents where id_profil = 2");
+                ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteagents where id_profil = 2");
 
                 produit.removeAllElements();
                 while (lesDonnees.next()) {
@@ -1605,7 +1605,7 @@ public final class Main extends javax.swing.JFrame {
         if (connecter == 1) {
             try {
 
-                ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteAgents where id_profil = 1");
+                ResultSet lesDonnees = SqlManager.getInstance().requeteSelection("select * from compteagents where id_profil = 1");
 
                 produit.removeAllElements();
                 while (lesDonnees.next()) {
@@ -1659,7 +1659,7 @@ public final class Main extends javax.swing.JFrame {
 
         ProfilCombo combo = (ProfilCombo) jComboBox.getSelectedItem();
 
-        SqlManager.getInstance().requeteAction("insert into `compteAgents` (`id_agent`, `nomAgent`, `emailAgent`, `telephoneAgent`, `loginAgent`, `motdepasseAgent`, `id_profil`) values (NULL ,'" + nom + "','" + email + "','" + login + "','" + mdp + "','" + telephone + "', '" + combo.getId() + "')");
+        SqlManager.getInstance().requeteAction("insert into `compteagents` (`id_agent`, `nomAgent`, `emailAgent`, `telephoneAgent`, `loginAgent`, `motdepasseAgent`, `id_profil`) values (NULL ,'" + nom + "','" + email + "','" + login + "','" + mdp + "','" + telephone + "', '" + combo.getId() + "')");
         JOptionPane.showMessageDialog(null, "Agent crée " + nom);
         ProfilCreerAgent.setVisible(false);
         Profil.setVisible(true);
