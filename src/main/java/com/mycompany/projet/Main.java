@@ -1945,7 +1945,7 @@ public final class Main extends javax.swing.JFrame {
         ProfilCombo idagent = (ProfilCombo) jComboBoxIdAgent.getSelectedItem();
 
         SqlManager.getInstance().requeteAction("insert into `vente` (`Id_vente`, `nomProduit`, `Id_client`, `id_agent`, `la_date`, `Quantite`) values (NULL ,'" + produit.getValue() + "','" + idclient.getId() + "','" + idagent.getId() + "', NULL ,'" + quantite + "')");
-        JOptionPane.showMessageDialog(null, "Produit vendu: " + produit + " x " + quantite + " Par l'agent: " + idagent.getValue());
+        JOptionPane.showMessageDialog(null, "Produit vendu: " + produit + " x " + quantite + " Par l'agent: " + idagent.getString());
         VenteCreer.setVisible(false);
         Vente.setVisible(true);
     }//GEN-LAST:event_SauvegarderCreerVenteActionPerformed
