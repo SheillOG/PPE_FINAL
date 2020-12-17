@@ -1670,10 +1670,14 @@ public final class Main extends javax.swing.JFrame {
      */
 
     private void OuvrirProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OuvrirProfilActionPerformed
-        Profil.setVisible(true);
-        Profil.setSize(450, 400);
-        Profil.setResizable(false);
-        Profil.setLocationRelativeTo(null);
+        if (admin) {
+            Profil.setVisible(true);
+            Profil.setSize(450, 400);
+            Profil.setResizable(false);
+            Profil.setLocationRelativeTo(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Veuillez vous connecter en admin pour accèder au profil");
+        }
     }//GEN-LAST:event_OuvrirProfilActionPerformed
 
     private void RetourMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourMenu2ActionPerformed
