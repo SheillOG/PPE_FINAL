@@ -20,7 +20,13 @@ Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il perme
 
 [Tutoriel pour les utilisateurs de Linux](http://elisabeth.pointal.org/doc/code/server/lamp/phpmyadmin).
 
-## Etape 2 - Cloner le projet sur la machine virtuel sous linux 📁
+## Etape 2 - Cloner le projet sur Intelijj 📁
+
+Creer un projet en Java JDK 8 
+ - Prenez la src + lib sur github et les placer dans IdeaProject (Pour Intelijj)
+ - N'oubliez pas d'importer les librairies 
+
+## Etape 2Bis - Cloner le projet sur la machine virtuel sous linux 📁
 
 ♨️ Pour installer le JAR, il suffit de cloner le repository depuis votre machine linux:
 
