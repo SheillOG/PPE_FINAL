@@ -2,9 +2,10 @@
 
 Perpi & Co est un logiciel développé en Java 8 (NetBeans et Intelij), il permet de gérer les système de vente d'une entreprise ainsi que d'effectuer des ventes au près des clients. (Quelques soucis peuvent être rencontré, car le projet à était commencer sur NetBeans et VmWare, puis recommencer pour cause de non compabilité sur Intelijj et Wamp)
 
-## Documentation 📕
+## Documentation et informations 📕
 
 - 📚 [Voir la documentation](https://docs.google.com/document/d/1pQ6byV07CO8u2E9mGfx29PC48VQNcCja2vEqIatVqe0/edit?usp=sharing)
+- 📕 Pour accèder au logiciels les identifiants admin sont : Login (admin) Mot de passe (admin)
 
 ## Requis 🖱️
 
