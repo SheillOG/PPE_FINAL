@@ -34,7 +34,7 @@ Creer un projet en Java JDK 8
   - cd ProjetSF4
   - git clone https://github.com/SheillOG/PPE_FINAL.git
 
-# Installation sous Windows (Recommendé pour le .jar) 📁
+# Installation sous Windows Wamp Server 📁
 
 Pour commencer l'installation il faut installer MySQL et PhpMyAdmin, il est possible de les installer grâce à WAMP (Windows).
 Voici un lien pour le télécharger: [WampServer](https://www.wampserver.com/en/download-wampserver-64bits/)
